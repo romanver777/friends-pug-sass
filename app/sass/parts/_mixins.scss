@@ -1,0 +1,71 @@
+@mixin link_btn($font-size, $line-height, $bgcolor, $bgcolor-hover){
+	text-align: center;
+	display: block;
+	color: #fff;
+	font-size: $font-size;
+	line-height: $line-height;
+	background-color: $bgcolor;
+	&:hover{
+		transition: 0.3s;
+		text-decoration: none;
+		color: #fff;
+		background-color: $bgcolor-hover;
+		}
+	&:active{
+		text-decoration: none;
+		color: #fff;
+		}
+	&:focus{
+		text-decoration: none;
+		color: #fff;
+	}
+	&:visited{
+		text-decoration: none;
+		color: #fff;
+	}
+}
+@mixin linkState($color, $td){
+	&:active{
+		text-decoration: none;
+		color: #fff;
+		}
+	&:focus{
+		text-decoration: none;
+		color: #fff;
+	}
+	&:visited{
+		text-decoration: none;
+		color: #fff;
+	}
+}
+@mixin ul($ff, $fz, $lst){
+	margin: 0;
+	padding: 0;
+	font-family: $ff;
+	font-size: $fz;
+	list-style-type: $lst;
+}
+@mixin a($display, $color, $colorHov, $td){
+	display: $display;
+	color: $color;
+	&:hover{
+		transition: 0.3s;
+		color: $colorHov;
+		text-decoration: $td;
+	}
+}
+// colors
+
+
+
+// fonts
+$f-robotomedium: 'robotomedium', sans-serif;
+$f-robotoregular: 'robotoregular', sans-serif;
+
+$map-bg-image:(
+	mat: '../img/pict/vedro-icon.png',
+	inst: '../img/pict/drel-icon.png',
+	tool: '../img/pict/trakt-icon.png',
+	sale:  '../img/pict/korz-icon.png',
+	deliv: '../img/pict/car-icon.png'
+);

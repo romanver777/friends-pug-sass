@@ -1,0 +1,63 @@
+doctype
+html(lang="ru-RU")
+    head
+        title ДругоФИЛЬТР
+        meta(name='description' content='')
+        meta(http-equiv="X-UA-Compatible" content="IE-edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="bower_components/normalize-css/normalize.css")
+        link(rel="stylesheet", href="css/main.css")
+        link(rel="stylesheet", href="fonts/fonts.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js")
+        script(src="http://vk.com/js/api/openapi.js", type="text/javascript")
+body.body
+    .wr
+        .header
+            .header__title Выберите друзей
+            a(href='').header__link
+        .content.clearfix
+            .col.left-col
+                .search.left-col__search
+                    input(type='text' name='search' placeholder='Начните вводить имя друга').search-input.left-col__input
+                .title Ваши друзья
+                .wr-list
+                    ul.list.list_border
+                        li.list__item.list__item_add
+                            .img-wr
+                                img(src="{photo_50}").img
+                            .name {{first_name}} {{last_name}}
+                            a(href='').link.add-link
+            .col.right-col
+                .search.right-col__search
+                    input(type='text' name='search' placeholder='Название').search-input.right-col__input
+                .title Друзья в списке
+                .wr-list
+                    ul.list.list__added
+        .footer.clearfix
+            button.button Сохранить
+
+script(id="add-user-template" type="text/x-handlebars-template").
+    {{#each this}}
+        <li class='list__item list__item_add'>
+            <div class="img-wr">
+                <img src="{{photo_50}}" class="img"/>
+            </div>
+            <div class="name">
+                {{first_name}} {{last_name}}
+            </div>
+            <a href="" class="link add-link" id="{{id}}"></a>
+        </li>
+    {{/each}}
+script(id="remove-user-template" type="text/x-handlebars-template").
+    {{#each this}}
+        <li class='list__item list__item_remove'>
+            <div class="img-wr">
+                <img src="{{photo_50}}" class="img"/>
+            </div>
+            <div class="name">
+                {{first_name}} {{last_name}}
+            </div>
+            <a href="" class="link remove-link" id="{{id}}"></a>
+        </li>
+    {{/each}}
+script(src='js/main.js')
